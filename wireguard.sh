@@ -29,8 +29,8 @@ Address = 10.0.0.1/24
 SaveConfig = true
 ListenPort = 1715
 PrivateKey = PlmkI/mK/vNOEtdoYuxHseBsu5ZaH3M9zK9YIZiCC2k=
-PostUp = iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o enp0s7 -j MASQUERADE
-PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o enp0s7 -j MASQUERADE
+PostUp = iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
 EOF
 
 sudo wg show wg0
